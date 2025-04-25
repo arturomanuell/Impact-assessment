@@ -1,3 +1,7 @@
+Firstable, I use ENAHO: Module 1 and 5 since 2007 until 2017
+In this code, I merged both databases because I want to have georeferenced conglomerates available in Module 5, where I run my econometric model.
+I do this for each year
+
 // Cargar la primera base de datos (con datos georeferenciados)
 use enaho01-2007-100.dta, clear
 
