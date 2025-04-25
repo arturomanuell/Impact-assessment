@@ -1,3 +1,8 @@
+I create variable underemployment for each year, I use names as reference
+Remember I calculate underemployment as INEI's definition and it depends of IRM from each year
+So I agrupated underemployment hours and  incomes as one 
+
+
 use enaho-2017.dta, clear
 * Crear la nueva variable e inicializar en 0
 generate subempleo = .
@@ -35,18 +40,3 @@ save enaho-2017-subempleo.dta
 
 
 
-
-
-
-//esto no hagas bruto ya que no forma parte de la pea
-* Cambiar el valor a 0 si p513t == 0 y ocu500 es 2 o 3
-replace subempleo = 0 if (p513t == 0 & (ocu500 == 2 | ocu500 == 3)) | (ocu500 == 2 | ocu500 == 3)
-
-
-*esta ultima está mejor ya que da más datos
-*Cambia el valor a 0 si p501 y p502 ambas son igual a 2 
-*trabajaron la semana pasado y trabaran la proxima semana
-replace subempleo = 0 if p501 == 2 & p502 == 2
-
-
-drop if missing(subempleo)
